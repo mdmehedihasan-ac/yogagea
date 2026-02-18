@@ -4,6 +4,8 @@ export interface Lezione {
   immagine: string;
   descrizione: string;
   categoria: "yoga" | "pilates" | "meditazione" | "qigong" | "mix";
+  suPrenotazione?: boolean;
+  telefonoPrenotazione?: string;
 }
 
 export const lezioni: Lezione[] = [
@@ -54,6 +56,8 @@ export const lezioni: Lezione[] = [
     descrizione:
       "Le lezioni di ginnastica si avvalgono della tecnica di Pilates sul mat. Paola Busconi è fisioterapista e porta il suo sapere e la sua esperienza nella pratica sul tappetino. Le sequenze studiate sono all'insegna dell'allenamento di varie fasce muscolari, addome e pavimento pelvico, in particolare ma anche braccia gambe e spalle.",
     categoria: "pilates",
+    suPrenotazione: true,
+    telefonoPrenotazione: "333 3333333",
   },
   {
     slug: "viveka-yoga",

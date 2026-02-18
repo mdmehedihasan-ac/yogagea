@@ -5,9 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Facebook, Instagram, Youtube, Phone, Mail } from "lucide-react";
+import { Menu, X, Facebook, Instagram, Youtube, Phone, Mail, LayoutDashboard } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { contatti } from "@/data/siteData";
+import { useSession } from "next-auth/react";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -24,6 +25,7 @@ export default function Navbar() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === "/";
+  const { data: session } = useSession();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -52,7 +54,7 @@ export default function Navbar() {
               <Mail size={13} /> {contatti.email}
             </a>
           </div>
-          <p className="tracking-wide text-cream-dark/75">Prima lezione su prenotazione • Piacenza</p>
+          <p className="tracking-wide text-cream-dark/75">Pilates su prenotazione · <a href="tel:3333333333" className="hover:text-white transition-colors underline underline-offset-2">333 3333333</a></p>
         </div>
       </div>
 
@@ -80,14 +82,24 @@ export default function Navbar() {
                   priority
                 />
               </div>
-              <span
-                className={cn(
-                  "font-heading text-2xl md:text-3xl font-semibold tracking-wide transition-colors",
-                  isScrolled ? "text-terra group-hover:text-terra-dark" : "text-white group-hover:text-cream-dark"
-                )}
-              >
-                YOGAGEA
-              </span>
+              <div className="flex flex-col leading-none">
+                <span
+                  className={cn(
+                    "font-heading text-2xl md:text-3xl font-semibold tracking-wide transition-colors",
+                    isScrolled ? "text-terra group-hover:text-terra-dark" : "text-white group-hover:text-cream-dark"
+                  )}
+                >
+                  YOGAGEA
+                </span>
+                <span
+                  className={cn(
+                    "text-[10px] md:text-xs tracking-widest uppercase transition-colors font-light",
+                    isScrolled ? "text-charcoal-light/70" : "text-cream-dark/70"
+                  )}
+                >
+                  yoga e pilates
+                </span>
+              </div>
             </Link>
 
             {/* Desktop Nav */}
@@ -143,6 +155,17 @@ export default function Navbar() {
                   <Youtube size={16} />
                 </a>
               </div>
+              <Link
+                href={session ? "/admin" : "/admin/login"}
+                className={cn(
+                  "flex items-center gap-1.5 px-3 py-2 rounded-full text-xs font-medium transition-all border",
+                  isScrolled
+                    ? "border-charcoal/20 text-charcoal hover:bg-charcoal hover:text-white"
+                    : "border-white/30 text-white hover:bg-white/20"
+                )}
+              >
+                <LayoutDashboard size={13} /> {session ? "Admin" : "Staff"}
+              </Link>
               <Link
                 href="/iscrizione"
                 className="bg-terra text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-terra-dark transition-all duration-300 hover:shadow-lg hover:shadow-terra/20"

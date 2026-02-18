@@ -126,9 +126,9 @@ export default function ContattiPage() {
 
               <ScrollReveal delay={0.3} className="mt-10">
                 <div className="bg-sage/10 rounded-2xl p-6">
-                  <h3 className="font-heading text-lg font-semibold text-charcoal mb-2">Newsletter</h3>
+                  <h3 className="font-heading text-lg font-semibold text-charcoal mb-2">Community WhatsApp</h3>
                   <p className="text-sm text-charcoal-light leading-relaxed">
-                    Per iscriverti alla newsletter ed essere aggiornato sugli eventi e i corsi di
+                    Per iscriverti alla community WhatsApp ed essere aggiornato sugli eventi e i corsi di
                     yogagea scrivi a{" "}
                     <a href={`mailto:${contatti.email}`} className="text-terra hover:underline">{contatti.email}</a>
                   </p>

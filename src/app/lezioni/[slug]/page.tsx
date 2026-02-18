@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Phone } from "lucide-react";
 import { lezioni } from "@/data/lezioni";
 import ScrollReveal from "@/components/ScrollReveal";
 
@@ -67,6 +67,20 @@ export default async function LezioneDetailPage({ params }: { params: Promise<{ 
               {lezione.descrizione}
             </p>
           </ScrollReveal>
+
+          {lezione.suPrenotazione && lezione.telefonoPrenotazione && (
+            <ScrollReveal delay={0.15} className="mt-8">
+              <div className="rounded-xl bg-sage/10 p-5 flex items-center gap-3">
+                <Phone size={18} className="text-terra shrink-0" />
+                <p className="text-charcoal-light">
+                  <span className="font-semibold text-charcoal">Solo su prenotazione</span> — Chiama o scrivi al{" "}
+                  <a href={`tel:${lezione.telefonoPrenotazione.replace(/\s/g, "")}`} className="text-terra font-medium hover:text-terra-dark underline underline-offset-2 transition-colors">
+                    {lezione.telefonoPrenotazione}
+                  </a>
+                </p>
+              </div>
+            </ScrollReveal>
+          )}
 
           <ScrollReveal delay={0.2} className="mt-12">
             <div className="flex flex-col sm:flex-row gap-4">

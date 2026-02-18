@@ -356,7 +356,7 @@ export default function HomePage() {
                 <div className="mt-8 rounded-xl bg-sage/10 p-4 text-sm text-charcoal-light">
                   <p className="inline-flex items-start gap-2">
                     <CheckCircle2 className="mt-0.5 text-sage" size={16} />
-                    Prima di iniziare in sala serve certificato medico non agonistico con ECG a riposo.
+                    Certificato medico non agonistico con ECG a riposo obbligatorio.
                   </p>
                 </div>
 

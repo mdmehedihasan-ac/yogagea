@@ -116,9 +116,9 @@ export default function Footer() {
               </li>
             </ul>
             <div className="mt-6">
-              <p className="text-xs text-cream-dark/50 mb-2 tracking-wider">NEWSLETTER</p>
+              <p className="text-xs text-cream-dark/50 mb-2 tracking-wider">COMMUNITY WHATSAPP</p>
               <p className="text-xs text-cream-dark/70 leading-relaxed">
-                Per iscriverti alla newsletter ed essere aggiornato sugli eventi e i corsi di yogagea scrivi a{" "}
+                Per iscriverti alla community WhatsApp ed essere aggiornato sugli eventi e i corsi di yogagea scrivi a{" "}
                 <a href={`mailto:${contatti.email}`} className="text-terra hover:text-terra-light transition-colors">
                   {contatti.email}
                 </a>

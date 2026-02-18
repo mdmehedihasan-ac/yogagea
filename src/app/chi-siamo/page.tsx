@@ -110,7 +110,7 @@ export default function ChiSiamoPage() {
             <div className="bg-sage/10 rounded-2xl p-8">
               <p className="text-sm text-charcoal-light mb-4">
                 Per restare sempre aggiornati sulla vita sociale ci si può iscrivere alla
-                newsletter inviando una mail a{" "}
+                community WhatsApp inviando una mail a{" "}
                 <a href={`mailto:${contatti.email}`} className="text-terra hover:underline">
                   {contatti.email}
                 </a>

@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import CookieBanner from "@/components/CookieBanner";
+import Providers from "@/components/Providers";
+import SiteShell from "@/components/SiteShell";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -52,10 +51,9 @@ export default function RootLayout({
       <body
         className={`${cormorant.variable} ${inter.variable} antialiased`}
       >
-        <Navbar />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
-        <CookieBanner />
+        <Providers>
+          <SiteShell>{children}</SiteShell>
+        </Providers>
       </body>
     </html>
   );

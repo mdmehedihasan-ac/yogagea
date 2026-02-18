@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
 import SectionHeading from "@/components/SectionHeading";
@@ -207,8 +207,21 @@ const sedi: Sede[] = [
 ];
 
 export default function OrariScheduleTabs() {
+  const [sediData, setSediData] = useState(sedi);
   const [activeSede, setActiveSede] = useState<Sede["id"]>("molineria");
-  const selectedSede = sedi.find((sede) => sede.id === activeSede) ?? sedi[0];
+
+  useEffect(() => {
+    fetch("/api/orari")
+      .then((r) => r.json())
+      .then((json) => {
+        if (json.data && Array.isArray(json.data)) {
+          setSediData(json.data);
+        }
+      })
+      .catch(() => {/* usa i dati statici */});
+  }, []);
+
+  const selectedSede = sediData.find((s) => s.id === activeSede) ?? sediData[0];
 
   return (
     <section className="section-space bg-cream-dark/40">
@@ -216,7 +229,7 @@ export default function OrariScheduleTabs() {
         <SectionHeading title="Orari Settimanali" subtitle="Seleziona la sede e consulta gli orari giorno per giorno" />
 
         <div className="mb-6 flex flex-wrap justify-center gap-3">
-          {sedi.map((sede) => (
+          {sediData.map((sede) => (
             <button
               key={sede.id}
               type="button"

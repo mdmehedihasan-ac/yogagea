@@ -18,7 +18,6 @@ interface FormData {
   indirizzoResidenza: string;
   telefono: string;
   email: string;
-  corsoScelto: string;
   accettaStatuto: boolean;
   accettaASI: boolean;
   autorizzaFotoVideo: boolean;
@@ -44,7 +43,6 @@ const initialFormData: FormData = {
   indirizzoResidenza: '',
   telefono: '',
   email: '',
-  corsoScelto: '',
   accettaStatuto: false,
   accettaASI: false,
   autorizzaFotoVideo: false,
@@ -57,24 +55,6 @@ const initialFormData: FormData = {
   tutoreTelefono: '',
   tutoreEmail: '',
 };
-
-const corsi = [
-  'Yoga & Pilates',
-  'Vinyasa Krama Yoga',
-  'Yoga per la Schiena',
-  'Ashtanga Yoga',
-  'Yutori',
-  'Pilates Posturale',
-  'Viveka Yoga',
-  'Katonah Inspired Yoga',
-  'Raja Yoga',
-  'Burning Yoga',
-  'Hatha Yoga Flow',
-  'Rocket Yoga Inspired',
-  'Qi Gong',
-  'Meditazione Vipassana',
-  'Piloga',
-];
 
 const steps = [
   { number: 1, label: 'Dati personali' },
@@ -165,8 +145,7 @@ export default function IscrizionePage() {
           data.codiceFiscale.trim() &&
           data.dataNascita &&
           data.telefono.trim() &&
-          data.email.trim() &&
-          data.corsoScelto
+          data.email.trim()
         );
       case 2:
         return data.accettaStatuto;
@@ -188,10 +167,19 @@ export default function IscrizionePage() {
     e.preventDefault();
     if (!canProceed()) return;
     setSubmitting(true);
-    // Simulate form submission (replace with actual API call)
-    await new Promise((r) => setTimeout(r, 1500));
-    setSubmitted(true);
-    setSubmitting(false);
+    try {
+      const res = await fetch("/api/iscrizioni", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error("Errore invio");
+      setSubmitted(true);
+    } catch {
+      alert("Si è verificato un errore durante l'invio. Riprova o contattaci direttamente.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   /* ─── slide animation ─── */
@@ -240,8 +228,7 @@ export default function IscrizionePage() {
             className="text-charcoal-light text-lg mb-8"
           >
             Grazie {data.nome}! La tua richiesta di iscrizione è stata inviata con successo.
-            Ti contatteremo al più presto per confermare la tua iscrizione al corso di{' '}
-            <strong>{data.corsoScelto}</strong>.
+            Ti contatteremo al più presto per confermare la tua iscrizione.
           </motion.p>
           <motion.a
             initial={{ opacity: 0 }}
@@ -423,21 +410,6 @@ export default function IscrizionePage() {
                           />
                         </Field>
                       </div>
-
-                      <Field label="Corso scelto" required>
-                        <select
-                          className={inputClass}
-                          value={data.corsoScelto}
-                          onChange={set('corsoScelto')}
-                        >
-                          <option value="">Seleziona un corso...</option>
-                          {corsi.map((c) => (
-                            <option key={c} value={c}>
-                              {c}
-                            </option>
-                          ))}
-                        </select>
-                      </Field>
 
                       {/* Maggiorenne toggle */}
                       <div className="pt-4 border-t border-cream-dark/40">
@@ -807,10 +779,6 @@ export default function IscrizionePage() {
                           <div>
                             <span className="text-charcoal-light">Telefono:</span>{' '}
                             <span className="text-charcoal font-medium">{data.telefono}</span>
-                          </div>
-                          <div className="sm:col-span-2">
-                            <span className="text-charcoal-light">Corso:</span>{' '}
-                            <span className="text-charcoal font-medium">{data.corsoScelto}</span>
                           </div>
                         </div>
                       </div>
