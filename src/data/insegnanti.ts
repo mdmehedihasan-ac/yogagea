@@ -104,8 +104,8 @@ export const insegnanti: Insegnante[] = [
   {
     slug: "grazia-alicanti",
     nome: "Grazia Alicanti",
-    foto: "TODO: inserire foto", // TODO: foto in arrivo da Yogagea
-    fotoBio: "TODO: inserire foto bio", // TODO: foto in arrivo da Yogagea
+    foto: "https://www.yogagea.com/wp-content/uploads/2023/04/rob1-1-small.jpg", // TODO: sostituire con foto di Grazia Alicanti
+    fotoBio: "https://www.yogagea.com/wp-content/uploads/2023/08/Robi_Morisi_bio-980x1250.jpg", // TODO: sostituire con foto bio di Grazia Alicanti
     bio: `TODO: testo in arrivo da Yogagea.`,
   },
 ];
