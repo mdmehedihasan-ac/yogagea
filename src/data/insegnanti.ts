@@ -23,8 +23,8 @@ export const insegnanti: Insegnante[] = [
   {
     slug: "valter-chiusa",
     nome: "Valter Chiusa",
-    foto: "https://www.yogagea.com/wp-content/uploads/2023/04/valter-1-small.jpg", // TODO: foto da aggiornare
-    fotoBio: "https://www.yogagea.com/wp-content/uploads/2023/03/1valter.png", // TODO: foto da aggiornare
+    foto: "/avatar-placeholder.svg", // TODO: foto da aggiornare
+    fotoBio: "/avatar-placeholder.svg", // TODO: foto da aggiornare
     bio: `Ho una lunga esperienza di pratica e studio della ginnastica. Ho iniziato a praticare Yoga nel 1969. Mi sono diplomato insegnante presso la scuola di formazione di Alexandra van Oosterum e presso di lei ho continuato lo studio e l'aggiornamento teorico e pratico. La mia pratica personale è caratterizzata dall'attenzione anatomica e dall'approfondimento delle posture in modo attento e dettagliato. Utilizzo la metodologia dell'Ashtanga Yoga che per me è ginnastica integrata al respiro utile a tutti. Nel 2012 ho seguito stages condotti da Ana Forrest a Milano e workshops di Andrea Boni e Piero Vivarelli. Nel 2014 ho completato le Immertions I-II-III di Anusara® Yoga con maestri italiani e stranieri. Nel 2015 ho concluso il Teacher Training di Anusara® Yoga a Milano. Assieme a Robi Morisi sono socio fondatore di Yogagea a.s.d.`,
   },
   {
@@ -55,8 +55,8 @@ export const insegnanti: Insegnante[] = [
   {
     slug: "barbara-alberici",
     nome: "Barbara Alberici",
-    foto: "https://www.yogagea.com/wp-content/uploads/2023/04/babi-1-small.jpg",
-    fotoBio: "https://www.yogagea.com/wp-content/uploads/2023/08/Barbara_Alberici_bio-980x1250.jpg",
+    foto: "/avatar-placeholder.svg", // TODO: foto da aggiornare
+    fotoBio: "/avatar-placeholder.svg", // TODO: foto da aggiornare
     bio: `Mi sono avvicinata allo Yoga nel 2014 per ricominciare a respirare e ascoltarmi. Il mio percorso è caratterizzato da intensità e gentilezza, qualità che mi hanno permesso di immergermi nella pratica costante e quotidiana, fatta di asana, letture e silenzio. Nell'aprile 2017 ho concluso il Teacher Training condotto da Nico Luce, Suzanne Faith e Andrea Boni. La mia formazione è focalizzata sullo studio dell'anatomia e degli allineamenti, oltre che sulle sacre scritture e sulla filosofia yogica. Mi piace adattare le classi ai praticanti ed ai loro umori, proponendo di volta in volta lezioni accoglienti e gentili che permettano una sana attività sportiva fisica per il benessere psicofisico dell'individuo. Sono laureata presso DAMS di Bologna alla Facoltà di Lettere e Filosofia.`,
   },
   {
@@ -83,8 +83,8 @@ export const insegnanti: Insegnante[] = [
   {
     slug: "stefania-casella",
     nome: "Stefania Casella",
-    foto: "https://www.yogagea.com/wp-content/uploads/2025/03/Stefania-Casella.jpg",
-    fotoBio: "https://www.yogagea.com/wp-content/uploads/2025/09/IMG-20250915-WA0000-1-980x1309.jpg",
+    foto: "/avatar-placeholder.svg", // TODO: foto da aggiornare
+    fotoBio: "/avatar-placeholder.svg", // TODO: foto da aggiornare
     bio: `Affascinata sin da bambina dalla cultura orientale, ho scoperto lo yoga in modo spontaneo, ancor prima di conoscerlo consapevolmente. Il mio primo incontro con questa disciplina è avvenuto verso i 30 anni ed ha acceso in me una passione che negli anni mi ha portata a esplorare diversi stili. Nel 2019 ho frequentato il mio primo seminario con Gabriella Cella, un'esperienza che ha segnato profondamente il mio percorso. Da quel momento, Gabriella è diventata il mio punto di riferimento, guidandomi alla scoperta di una disciplina con radici profonde, capace di trasformare corpo e mente. La mia formazione mi ha portata ad approfondire l'arte di adattare la pratica alle esigenze del corpo attraverso il Vinyasa Krama Sequencing, studiato con le maestre Giovanna De Paulis e Alessandra Tisato. Ho ampliato le mie conoscenze dedicandomi allo Yoga Nidra, allo Yoga per il femminile e allo yoga ratna integrando cosi nella mia pratica la dimensione simbolica e archetipica dello yoga. La mia passione per la mitologia induista mi ha spinta ad esplorare lo studio (con Sonia Pippinato e Claudia Cane) per la creazione di sequenze come Shakti Flow, Shakti Restorative, Mythic Yoga Flow, che uniscono movimento, narrazione e connessione interiore. Ho avuto il privilegio di partecipare a corsi, masterclass e seminari con maestri di grande esperienza, tra cui Marco Passavanti, Karina Gusalova, Carla Nataloni, Giovanna De Paulis, Paola Mattei, Michela Maltoni, Ameriga Giannone e Anna Inferrera, ognuno dei quali ha arricchito la mia visione dello yoga e stimolato il desiderio di formazione ed evoluzione continua.`,
   },
   {
@@ -97,15 +97,15 @@ export const insegnanti: Insegnante[] = [
   {
     slug: "lorenza-boni",
     nome: "Lorenza Boni",
-    foto: "https://www.yogagea.com/wp-content/uploads/2025/09/LORENZA-BONI.jpg", // TODO: foto da aggiornare
-    fotoBio: "https://www.yogagea.com/wp-content/uploads/2025/09/LORENZA-BONI_P-980x1239.jpg", // TODO: foto da aggiornare
+    foto: "/avatar-placeholder.svg", // TODO: foto da aggiornare
+    fotoBio: "/avatar-placeholder.svg", // TODO: foto da aggiornare
     bio: `Sono istruttore di QiGong salutistico secondo gli insegnamenti del maestro Li Xiaoming. Propongo pratiche adatte a tutte le età fatte di movimenti fluidi atti a rendere il corpo flessibile ed elastico, liberare la mente e potenziare il proprio Qi, ovvero la propria energia vitale.`,
   },
   {
     slug: "grazia-alicanti",
     nome: "Grazia Alicanti",
-    foto: "https://www.yogagea.com/wp-content/uploads/2023/04/rob1-1-small.jpg", // TODO: sostituire con foto di Grazia Alicanti
-    fotoBio: "https://www.yogagea.com/wp-content/uploads/2023/08/Robi_Morisi_bio-980x1250.jpg", // TODO: sostituire con foto bio di Grazia Alicanti
+    foto: "/avatar-placeholder.svg", // TODO: foto da aggiornare
+    fotoBio: "/avatar-placeholder.svg", // TODO: foto da aggiornare
     bio: `TODO: testo in arrivo da Yogagea.`,
   },
 ];
