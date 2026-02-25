@@ -10,12 +10,12 @@ export interface Lezione {
 
 export const lezioni: Lezione[] = [
   {
-    slug: "yoga-pilates",
-    nome: "Yoga & Pilates",
+    slug: "hatha-yoga",
+    nome: "Hatha Yoga",
     immagine: "https://www.yogagea.com/wp-content/uploads/2023/03/funzionaleyintonic.jpeg",
     descrizione:
-      "Hai bisogno di prenderti una pausa dalla frenesia settimanale? Questa lezione fa per te. Le classi hanno il focus sulle articolazioni, sui legamenti, tendini e tessuto miofasciale. Il ritmo è dolce e lento. Alleni il corpo con movimenti di pilates e yoga.",
-    categoria: "mix",
+      "Hai bisogno di prenderti una pausa dalla frenesia settimanale? Questa lezione fa per te. Le classi hanno il focus sulle articolazioni, sui legamenti, tendini e tessuto miofasciale. Il ritmo è dolce e lento. Attraverso la pratica delle posture (asana) e la respirazione consapevole, riscopri l'equilibrio tra corpo e mente.",
+    categoria: "yoga",
   },
   {
     slug: "vinyasa-krama",
@@ -50,8 +50,8 @@ export const lezioni: Lezione[] = [
     categoria: "meditazione",
   },
   {
-    slug: "pilates-posturale",
-    nome: "Pilates Posturale",
+    slug: "pilates",
+    nome: "Pilates",
     immagine: "https://www.yogagea.com/wp-content/uploads/2023/03/pilates.jpg",
     descrizione:
       "Le lezioni di ginnastica si avvalgono della tecnica di Pilates sul mat. Paola Busconi è fisioterapista e porta il suo sapere e la sua esperienza nella pratica sul tappetino. Le sequenze studiate sono all'insegna dell'allenamento di varie fasce muscolari, addome e pavimento pelvico, in particolare ma anche braccia gambe e spalle.",
@@ -76,21 +76,15 @@ export const lezioni: Lezione[] = [
     categoria: "yoga",
   },
   {
-    slug: "raja-yoga",
-    nome: "Raja Yoga",
+    slug: "yin-yoga",
+    nome: "Yin Yoga",
     immagine: "https://www.yogagea.com/wp-content/uploads/2024/08/RAJA-980x549.png",
+    // TODO: testo in arrivo da Yogagea
     descrizione:
-      'Raja Yoga ossia lo "Yoga Regale" è una lezione ispirata alla dottrina classica dello Yoga e al percorso ad otto stadi (Ashtanga Yoga) indicato da Patanjali negli Yogasutra. La prima parte è dedicata alle posizioni (Asana) che sono mantenute a lungo, la seconda parte a tecniche di respirazione (Pranayama) e meditazione (Dhyana). Lezione consigliata a chi vuole approfondire e sperimentare gli aspetti filosofici della tradizione yogica.',
+      "Lo Yin Yoga è una pratica lenta e meditativa in cui le posture vengono mantenute a lungo, dai 3 ai 5 minuti o più. Agisce in profondità sui tessuti connettivi, legamenti e fascia miofasciale, favorendo mobilità articolare e rilascio delle tensioni accumulate. Una pratica complementare a tutti gli stili dinamici, ideale per ritrovare silenzio e consapevolezza interiore.",
     categoria: "yoga",
   },
-  {
-    slug: "burning-yoga",
-    nome: "Burning Yoga",
-    immagine: "https://www.yogagea.com/wp-content/uploads/2024/08/POWER-YOGA-980x549.png",
-    descrizione:
-      "Se hai voglia di cominciare la settimana sudando e divertendoti allora questa è la lezione per te. Alto il livello di intensità. Puoi cominciare da zero e Marta ti accompagnerà con pazienza e professionalità. È prevista una scoutistica per la fascia giovanile.",
-    categoria: "yoga",
-  },
+
   {
     slug: "hatha-yoga-flow",
     nome: "Hatha Yoga Flow",
@@ -124,11 +118,12 @@ export const lezioni: Lezione[] = [
     categoria: "meditazione",
   },
   {
-    slug: "piloga",
-    nome: "Piloga",
-    immagine: "https://www.yogagea.com/wp-content/uploads/2025/09/Piloga-980x549.jpg",
+    slug: "mindfulness",
+    nome: "Mindfulness",
+    immagine: "https://www.yogagea.com/wp-content/uploads/2025/09/meditazione-vipassana-980x549.jpg",
+    // TODO: testo in arrivo da Yogagea
     descrizione:
-      "La lezione vede l'incontro della forza del Pilates con la morbidezza dello Yoga. Ogni movimento diventa pura presenza.",
-    categoria: "mix",
+      "La Mindfulness è la pratica dell'attenzione consapevole al momento presente, senza giudizio. Gli incontri guidati da Robi Morisi, MBSR Trainer certificata, offrono strumenti pratici per ridurre lo stress, migliorare la chiarezza mentale e ritrovare equilibrio nella vita quotidiana.",
+    categoria: "meditazione",
   },
 ];

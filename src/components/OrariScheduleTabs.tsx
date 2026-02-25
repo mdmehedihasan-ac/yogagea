@@ -25,21 +25,24 @@ type Sede = {
 };
 
 const corsoSlugMap: Record<string, string> = {
-  "PILATES pers": "pilates-posturale",
-  PILATES: "pilates-posturale",
-  "YOGA & PILATES": "yoga-pilates",
+  "PILATES pers": "pilates",
+  PILATES: "pilates",
+  "YOGA & PILATES": "hatha-yoga",
+  "HATHA YOGA": "hatha-yoga",
+  "HATHA YOGA CLASSICO": "hatha-yoga-flow",
+  "HATHA FLOW": "hatha-yoga-flow",
+  "YOGA FLOW": "hatha-yoga-flow",
   "ROCKET YOGA insp.": "rocket-yoga-inspired",
   "VINYASA KRAMA": "vinyasa-krama",
   "QI GONG": "qi-gong",
-  "HATHA FLOW": "hatha-yoga-flow",
-  "HATHA YOGA": "hatha-yoga-flow",
-  "HATHA YOGA CLASSICO": "hatha-yoga-flow",
-  "YOGA FLOW": "hatha-yoga-flow",
   "VIVEKA YOGA": "viveka-yoga",
   ASHTANGA: "ashtanga",
   MEDITAZIONE: "meditazione-vipassana",
   "KATONAH YOGA": "katonah-inspired",
-  "BURNING YOGA": "burning-yoga",
+  "RAJA YOGA": "yin-yoga",
+  "YIN YOGA": "yin-yoga",
+  MINDFULNESS: "mindfulness",
+  YUTORI: "yutori",
 };
 
 const insegnanteSlugMap: Record<string, string> = {
@@ -56,6 +59,7 @@ const insegnanteSlugMap: Record<string, string> = {
   Walt: "valter-chiusa",
   Fede: "federica-burzoni",
   Stefania: "stefania-casella",
+  Grazia: "grazia-alicanti",
 };
 
 function renderCorsoLink(nomeCorso: string) {

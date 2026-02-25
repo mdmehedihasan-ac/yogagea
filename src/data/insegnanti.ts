@@ -23,8 +23,8 @@ export const insegnanti: Insegnante[] = [
   {
     slug: "valter-chiusa",
     nome: "Valter Chiusa",
-    foto: "https://www.yogagea.com/wp-content/uploads/2023/04/valter-1-small.jpg",
-    fotoBio: "https://www.yogagea.com/wp-content/uploads/2023/03/1valter.png",
+    foto: "https://www.yogagea.com/wp-content/uploads/2023/04/valter-1-small.jpg", // TODO: foto da aggiornare
+    fotoBio: "https://www.yogagea.com/wp-content/uploads/2023/03/1valter.png", // TODO: foto da aggiornare
     bio: `Ho una lunga esperienza di pratica e studio della ginnastica. Ho iniziato a praticare Yoga nel 1969. Mi sono diplomato insegnante presso la scuola di formazione di Alexandra van Oosterum e presso di lei ho continuato lo studio e l'aggiornamento teorico e pratico. La mia pratica personale è caratterizzata dall'attenzione anatomica e dall'approfondimento delle posture in modo attento e dettagliato. Utilizzo la metodologia dell'Ashtanga Yoga che per me è ginnastica integrata al respiro utile a tutti. Nel 2012 ho seguito stages condotti da Ana Forrest a Milano e workshops di Andrea Boni e Piero Vivarelli. Nel 2014 ho completato le Immertions I-II-III di Anusara® Yoga con maestri italiani e stranieri. Nel 2015 ho concluso il Teacher Training di Anusara® Yoga a Milano. Assieme a Robi Morisi sono socio fondatore di Yogagea a.s.d.`,
   },
   {
@@ -48,8 +48,8 @@ export const insegnanti: Insegnante[] = [
   {
     slug: "stefano-molinari",
     nome: "Stefano Molinari",
-    foto: "https://www.yogagea.com/wp-content/uploads/2023/04/stef-1-small.jpg",
-    fotoBio: "https://www.yogagea.com/wp-content/uploads/2025/09/thumbnail_IMG_7866-980x1058.jpg",
+    foto: "https://www.yogagea.com/wp-content/uploads/2023/04/stef-1-small.jpg", // TODO: foto da aggiornare
+    fotoBio: "https://www.yogagea.com/wp-content/uploads/2025/09/thumbnail_IMG_7866-980x1058.jpg", // TODO: foto da aggiornare
     bio: `Incontro lo Yoga nel 2010: è l'inizio di un cammino di trasformazione. Nel 2016 completo la formazione in Hatha Yoga. Attraverso diverse esperienze di meditazione, dallo Zen alla Vipassanā, ricerco lo stare nel corpo, nel respiro, nel momento. Nel tempo la pratica si è evoluta con me, diventando un percorso di consapevolezza, libertà e presenza. Fuori dalla shala lavoro come biologo in ospedale, guido bagni di bosco, amo perdermi nella natura, camminare tra gli alberi, osservare il cielo, ascoltare i ruscelli. Ricercare un corpo che sente è la mia forma di gentilezza verso il mondo.`,
   },
   {
@@ -97,8 +97,15 @@ export const insegnanti: Insegnante[] = [
   {
     slug: "lorenza-boni",
     nome: "Lorenza Boni",
-    foto: "https://www.yogagea.com/wp-content/uploads/2025/09/LORENZA-BONI.jpg",
-    fotoBio: "https://www.yogagea.com/wp-content/uploads/2025/09/LORENZA-BONI_P-980x1239.jpg",
+    foto: "https://www.yogagea.com/wp-content/uploads/2025/09/LORENZA-BONI.jpg", // TODO: foto da aggiornare
+    fotoBio: "https://www.yogagea.com/wp-content/uploads/2025/09/LORENZA-BONI_P-980x1239.jpg", // TODO: foto da aggiornare
     bio: `Sono istruttore di QiGong salutistico secondo gli insegnamenti del maestro Li Xiaoming. Propongo pratiche adatte a tutte le età fatte di movimenti fluidi atti a rendere il corpo flessibile ed elastico, liberare la mente e potenziare il proprio Qi, ovvero la propria energia vitale.`,
+  },
+  {
+    slug: "grazia-alicanti",
+    nome: "Grazia Alicanti",
+    foto: "TODO: inserire foto", // TODO: foto in arrivo da Yogagea
+    fotoBio: "TODO: inserire foto bio", // TODO: foto in arrivo da Yogagea
+    bio: `TODO: testo in arrivo da Yogagea.`,
   },
 ];
