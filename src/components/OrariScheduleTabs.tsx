@@ -43,6 +43,8 @@ const corsoSlugMap: Record<string, string> = {
   "YIN YOGA": "yin-yoga",
   MINDFULNESS: "mindfulness",
   YUTORI: "yutori",
+  "KUNDALINI YOGA": "kundalini-yoga",
+  "YOGA RESET": "yoga-reset",
 };
 
 const insegnanteSlugMap: Record<string, string> = {
