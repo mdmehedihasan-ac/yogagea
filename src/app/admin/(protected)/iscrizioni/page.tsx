@@ -12,7 +12,6 @@ interface Iscrizione {
   data_nascita: string;
   telefono: string;
   email: string;
-  corso_scelto: string;
   stato: "nuova" | "in_revisione" | "confermata" | "rifiutata";
   created_at: string;
   note_admin: string | null;
@@ -69,8 +68,7 @@ export default function IscrizioniAdminPage() {
     return (
       i.nome.toLowerCase().includes(q) ||
       i.cognome.toLowerCase().includes(q) ||
-      i.email.toLowerCase().includes(q) ||
-      i.corso_scelto.toLowerCase().includes(q)
+      i.email.toLowerCase().includes(q)
     );
   });
 
@@ -96,7 +94,7 @@ export default function IscrizioniAdminPage() {
         <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-charcoal-light" />
         <input
           type="text"
-          placeholder="Cerca per nome, email, corso…"
+          placeholder="Cerca per nome o email…"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className="w-full max-w-md pl-9 pr-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-terra/50"
@@ -160,7 +158,6 @@ function IscrizioneRow({
             <p className="font-medium text-charcoal text-sm">
               {i.nome} {i.cognome}
             </p>
-            <p className="text-xs text-charcoal-light truncate">{i.corso_scelto}</p>
           </div>
           <span className={cn("text-xs px-2 py-0.5 rounded-full font-medium shrink-0", badge.cls)}>
             {badge.label}
