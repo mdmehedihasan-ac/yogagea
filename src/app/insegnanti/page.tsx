@@ -24,7 +24,7 @@ export default function InsegnantiPage() {
       {/* Grid */}
       <section className="section-space bg-cream">
         <div className="site-container">
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+          <div className="grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-3 lg:gap-8">
             {insegnanti.map((ins, i) => (
               <ScrollReveal key={ins.slug} delay={i * 0.05}>
                 <Link href={`/insegnanti/${ins.slug}`} className="h-full">

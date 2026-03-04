@@ -74,16 +74,16 @@ export default function IscrizioniAdminPage() {
 
   return (
     <div>
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
         <div>
-          <h1 className="text-2xl font-semibold text-charcoal">Iscrizioni</h1>
+          <h1 className="text-xl sm:text-2xl font-semibold text-charcoal">Iscrizioni</h1>
           <p className="text-charcoal-light text-sm mt-1">
             {iscrizioni.length} iscrizioni totali
           </p>
         </div>
         <a
           href="/api/iscrizioni/export"
-          className="flex items-center gap-2 bg-charcoal text-white px-4 py-2.5 rounded-xl text-sm font-medium hover:bg-charcoal-light transition-all"
+          className="flex items-center justify-center gap-2 bg-charcoal text-white px-4 py-2.5 rounded-xl text-sm font-medium hover:bg-charcoal-light transition-all w-full sm:w-auto"
         >
           <Download size={15} /> Esporta CSV
         </a>
@@ -97,7 +97,7 @@ export default function IscrizioniAdminPage() {
           placeholder="Cerca per nome o email…"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="w-full max-w-md pl-9 pr-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-terra/50"
+          className="w-full pl-9 pr-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-terra/50"
         />
       </div>
 

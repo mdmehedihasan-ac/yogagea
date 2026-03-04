@@ -136,7 +136,7 @@ export default function Footer() {
         <div className="site-container py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-xs text-cream-dark/50 text-center md:text-left">
-              {legal.copyright} – {legal.asi} – {legal.coni} – {legal.cf} – {legal.piva}
+              {`${legal.copyright} – ${legal.asi} – ${legal.coni} – ${legal.cf} – ${legal.piva}`}
             </p>
             <div className="flex items-center gap-4">
               <Link

@@ -194,9 +194,9 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-cream/98 backdrop-blur-xl lg:hidden"
+            className="fixed inset-0 z-40 bg-cream lg:hidden overflow-y-auto"
           >
-            <div className="flex flex-col items-center justify-center h-full gap-2 px-6">
+            <div className="flex flex-col items-center gap-2 px-6 py-16 min-h-full">
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.href}
@@ -239,7 +239,7 @@ export default function Navbar() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
-                className="mt-6 w-full max-w-sm"
+                className="mt-6 w-full max-w-sm flex flex-col gap-3"
               >
                 <Link
                   href="/iscrizione"
@@ -247,6 +247,13 @@ export default function Navbar() {
                   className="block text-center bg-terra text-white px-8 py-3 rounded-full font-medium hover:bg-terra-dark transition-all"
                 >
                   Iscriviti Online
+                </Link>
+                <Link
+                  href={session ? "/admin" : "/admin/login"}
+                  onClick={() => setIsMobileOpen(false)}
+                  className="flex items-center justify-center gap-2 border border-charcoal/20 text-charcoal px-8 py-3 rounded-full text-sm font-medium hover:bg-charcoal hover:text-white transition-all"
+                >
+                  <LayoutDashboard size={15} /> {session ? "Admin" : "Staff"}
                 </Link>
               </motion.div>
             </div>
