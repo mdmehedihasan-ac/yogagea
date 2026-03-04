@@ -21,13 +21,19 @@ function LoginForm() {
     setError("");
     setLoading(true);
 
-    const result = await loginAction(username, password, callbackUrl);
+    try {
+      const result = await loginAction(username, password);
 
-    if (result?.error) {
-      setError(result.error);
-      setLoading(false);
+      if (result.success) {
+        window.location.href = callbackUrl;
+        return;
+      }
+
+      setError(result.error || "Errore durante il login.");
+    } catch {
+      setError("Errore di connessione. Riprova.");
     }
-    // se non c'è errore, la server action ha fatto redirect — non serve altro
+    setLoading(false);
   };
 
   return (

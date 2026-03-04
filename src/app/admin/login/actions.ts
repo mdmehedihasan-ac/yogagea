@@ -5,16 +5,19 @@ import { AuthError } from "next-auth";
 
 export async function loginAction(
   username: string,
-  password: string,
-  callbackUrl: string
-): Promise<{ error: string } | void> {
+  password: string
+): Promise<{ success: boolean; error?: string }> {
   try {
-    await signIn("credentials", { username, password, redirectTo: callbackUrl });
+    await signIn("credentials", {
+      username,
+      password,
+      redirect: false,
+    });
+    return { success: true };
   } catch (error) {
     if (error instanceof AuthError) {
-      return { error: "Username o password non corretti." };
+      return { success: false, error: "Username o password non corretti." };
     }
-    // signIn lancia un redirect quando va a buon fine — lo ri-throwsiamo
     throw error;
   }
 }
