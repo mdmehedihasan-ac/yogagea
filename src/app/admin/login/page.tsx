@@ -22,18 +22,12 @@ function LoginForm() {
     setLoading(true);
 
     try {
-      const result = await signIn("credentials", {
+      // Let NextAuth handle the redirect automatically
+      await signIn("credentials", {
         username,
         password,
-        redirect: false,
+        callbackUrl,
       });
-
-      if (!result || result.error) {
-        setError("Username o password non corretti.");
-        setLoading(false);
-      } else {
-        window.location.href = callbackUrl;
-      }
     } catch {
       setError("Errore di connessione. Riprova.");
       setLoading(false);
