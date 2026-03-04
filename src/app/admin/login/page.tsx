@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, Suspense } from "react";
-import { signIn } from "next-auth/react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { Lock, User, Eye, EyeOff, Loader2 } from "lucide-react";
+import { loginAction } from "./actions";
 
 function LoginForm() {
   const searchParams = useSearchParams();
@@ -21,19 +21,13 @@ function LoginForm() {
     setError("");
     setLoading(true);
 
-    const result = await signIn("credentials", {
-      username,
-      password,
-      redirect: false,
-    });
+    const result = await loginAction(username, password, callbackUrl);
 
-    setLoading(false);
-
-    if (!result || result.error) {
-      setError("Username o password non corretti.");
-    } else {
-      window.location.href = callbackUrl;
+    if (result?.error) {
+      setError(result.error);
+      setLoading(false);
     }
+    // se non c'è errore, la server action ha fatto redirect — non serve altro
   };
 
   return (
