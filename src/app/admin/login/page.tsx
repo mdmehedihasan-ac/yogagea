@@ -50,7 +50,7 @@ export default function AdminLoginPage() {
               onChange={(e) => setUsername(e.target.value)}
               required
               autoComplete="username"
-              className="w-full bg-white/10 border border-white/15 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-orange-400/70 transition-colors text-sm"
+              className="w-full bg-white/10 border border-white/15 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-violet-400/70 transition-colors text-sm"
               placeholder="admin"
             />
           </div>
@@ -63,7 +63,7 @@ export default function AdminLoginPage() {
               onChange={(e) => setPassword(e.target.value)}
               required
               autoComplete="current-password"
-              className="w-full bg-white/10 border border-white/15 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-orange-400/70 transition-colors text-sm"
+              className="w-full bg-white/10 border border-white/15 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-violet-400/70 transition-colors text-sm"
               placeholder="••••••••"
             />
           </div>
@@ -77,7 +77,7 @@ export default function AdminLoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-orange-600 hover:bg-orange-700 disabled:opacity-60 text-white rounded-xl py-3 font-medium transition-all flex items-center justify-center gap-2"
+            className="w-full bg-violet-600 hover:bg-violet-700 disabled:opacity-60 text-white rounded-xl py-3 font-medium transition-all flex items-center justify-center gap-2"
           >
             {loading ? (
               <>
