@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, Suspense } from "react";
-import { signIn } from "next-auth/react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { Lock, User, Eye, EyeOff, Loader2 } from "lucide-react";
@@ -16,19 +15,51 @@ function LoginForm() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const [debug, setDebug] = useState("");
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
+    setDebug("");
     setLoading(true);
 
     try {
-      // Let NextAuth handle the redirect automatically
-      await signIn("credentials", {
-        username,
-        password,
-        callbackUrl,
+      // Step 1: Get CSRF token
+      setDebug("Step 1: Getting CSRF token...");
+      const csrfRes = await fetch("/api/auth/csrf");
+      const csrfData = await csrfRes.json();
+      setDebug(prev => prev + "\nCSRF: " + JSON.stringify(csrfData));
+
+      // Step 2: Call credentials callback directly
+      setDebug(prev => prev + "\nStep 2: Calling credentials callback...");
+      const res = await fetch("/api/auth/callback/credentials", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({
+          username,
+          password,
+          csrfToken: csrfData.csrfToken,
+          callbackUrl: callbackUrl,
+          json: "true",
+        }),
+        redirect: "follow",
       });
-    } catch {
+
+      setDebug(prev => prev + "\nStatus: " + res.status + " " + res.statusText);
+      setDebug(prev => prev + "\nURL: " + res.url);
+
+      const text = await res.text();
+      setDebug(prev => prev + "\nBody: " + text.substring(0, 500));
+
+      if (res.url && !res.url.includes("/login")) {
+        setDebug(prev => prev + "\nSuccess! Redirecting...");
+        window.location.href = callbackUrl;
+      } else {
+        setError("Autenticazione fallita. Controlla username e password.");
+        setLoading(false);
+      }
+    } catch (err) {
+      setDebug(prev => prev + "\nError: " + String(err));
       setError("Errore di connessione. Riprova.");
       setLoading(false);
     }
@@ -102,6 +133,12 @@ function LoginForm() {
             <p className="text-red-400 text-sm text-center bg-red-400/10 rounded-lg py-2 px-3">
               {error}
             </p>
+          )}
+
+          {debug && (
+            <pre className="text-green-400 text-xs bg-black/50 rounded-lg p-3 whitespace-pre-wrap break-all max-h-48 overflow-auto">
+              {debug}
+            </pre>
           )}
 
           <button
