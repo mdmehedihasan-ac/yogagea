@@ -1,19 +1,6 @@
-import mysql from "mysql2/promise";
+import { neon } from "@neondatabase/serverless";
 
-let pool: mysql.Pool | null = null;
-
-export function getDb(): mysql.Pool {
-  if (!pool) {
-    pool = mysql.createPool({
-      host: process.env.DB_HOST || "localhost",
-      port: Number(process.env.DB_PORT) || 3306,
-      user: process.env.DB_USER || "root",
-      password: process.env.DB_PASSWORD || "",
-      database: process.env.DB_NAME || "yogagea",
-      waitForConnections: true,
-      connectionLimit: 10,
-      timezone: "+01:00",
-    });
-  }
-  return pool;
+export function getDb() {
+  const sql = neon(process.env.DATABASE_URL!);
+  return sql;
 }

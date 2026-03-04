@@ -9,13 +9,12 @@ export async function GET() {
   }
 
   try {
-    const db = getDb();
-    const [rows] = await db.query(
-      `SELECT cognome, nome, codice_fiscale, data_nascita, luogo_nascita,
-              email, indirizzo, cap, comune_residenza
-       FROM iscrizioni
-       ORDER BY created_at DESC`
-    ) as [Record<string, unknown>[], unknown];
+    const sql = getDb();
+    const rows = await sql`
+      SELECT cognome, nome, codice_fiscale, data_nascita, luogo_nascita,
+             email, indirizzo, cap, comune_residenza
+      FROM iscrizioni
+      ORDER BY created_at DESC` as Record<string, unknown>[];
 
     const headers = [
       "COGNOME", "NOME", "C.F.", "DATA DI NASCITA", "LUOGO DI NASCITA",

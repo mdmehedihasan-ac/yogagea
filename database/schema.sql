@@ -1,14 +1,11 @@
 -- ================================================================
--- Schema MySQL per YogaGea
--- Esegui questo file nel tuo database MySQL prima di avviare il sito
+-- Schema PostgreSQL per YogaGea (Neon)
+-- Esegui questo SQL nella console del tuo database Neon
 -- ================================================================
-
-CREATE DATABASE IF NOT EXISTS yogagea CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE yogagea;
 
 -- ─── Tabella iscrizioni ─────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS iscrizioni (
-  id               INT AUTO_INCREMENT PRIMARY KEY,
+  id               SERIAL PRIMARY KEY,
   nome             VARCHAR(100) NOT NULL,
   cognome          VARCHAR(100) NOT NULL,
   codice_fiscale   VARCHAR(16)  NOT NULL,
@@ -21,28 +18,28 @@ CREATE TABLE IF NOT EXISTS iscrizioni (
   telefono         VARCHAR(30)  NOT NULL,
   email            VARCHAR(150) NOT NULL,
   corso_scelto     VARCHAR(100) NOT NULL,
-  is_maggiorenne   TINYINT(1) DEFAULT 1,
+  is_maggiorenne   BOOLEAN DEFAULT TRUE,
   tutore_nome      VARCHAR(100),
   tutore_cognome   VARCHAR(100),
   tutore_cf        VARCHAR(16),
   tutore_telefono  VARCHAR(30),
   tutore_email     VARCHAR(150),
-  accetta_statuto  TINYINT(1) DEFAULT 0,
-  accetta_asi      TINYINT(1) DEFAULT 0,
-  autorizza_foto   TINYINT(1) DEFAULT 0,
-  dichiara_safeguarding TINYINT(1) DEFAULT 0,
-  accetta_privacy  TINYINT(1) DEFAULT 0,
-  stato            ENUM('nuova','in_revisione','confermata','rifiutata') DEFAULT 'nuova',
+  accetta_statuto  BOOLEAN DEFAULT FALSE,
+  accetta_asi      BOOLEAN DEFAULT FALSE,
+  autorizza_foto   BOOLEAN DEFAULT FALSE,
+  dichiara_safeguarding BOOLEAN DEFAULT FALSE,
+  accetta_privacy  BOOLEAN DEFAULT FALSE,
+  stato            VARCHAR(20) DEFAULT 'nuova',
   note_admin       TEXT,
-  created_at       DATETIME DEFAULT CURRENT_TIMESTAMP,
-  updated_at       DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB;
+  created_at       TIMESTAMPTZ DEFAULT NOW(),
+  updated_at       TIMESTAMPTZ DEFAULT NOW()
+);
 
 -- ─── Tabella orari ──────────────────────────────────────────────
--- Salva gli orari come JSON per flessibilità massima
+-- Salva gli orari come JSONB per flessibilità massima
 CREATE TABLE IF NOT EXISTS orari (
-  id         INT AUTO_INCREMENT PRIMARY KEY,
-  data       JSON NOT NULL,
-  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  id         SERIAL PRIMARY KEY,
+  data       JSONB NOT NULL,
+  updated_at TIMESTAMPTZ DEFAULT NOW(),
   updated_by VARCHAR(100)
-) ENGINE=InnoDB;
+);

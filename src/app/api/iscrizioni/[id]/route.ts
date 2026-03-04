@@ -14,13 +14,11 @@ export async function PATCH(
 
   const { id } = await params;
   const body = await request.json();
+  const numericId = Number(id);
 
   try {
-    const db = getDb();
-    await db.query(
-      `UPDATE iscrizioni SET stato = ?, note_admin = ? WHERE id = ?`,
-      [body.stato, body.noteAdmin || null, id]
-    );
+    const sql = getDb();
+    await sql`UPDATE iscrizioni SET stato = ${body.stato}, note_admin = ${body.noteAdmin || null} WHERE id = ${numericId}`;
     return NextResponse.json({ success: true });
   } catch (err) {
     console.error("DB error:", err);
@@ -39,10 +37,11 @@ export async function DELETE(
   }
 
   const { id } = await params;
+  const numericId = Number(id);
 
   try {
-    const db = getDb();
-    await db.query(`DELETE FROM iscrizioni WHERE id = ?`, [id]);
+    const sql = getDb();
+    await sql`DELETE FROM iscrizioni WHERE id = ${numericId}`;
     return NextResponse.json({ success: true });
   } catch (err) {
     console.error("DB error:", err);

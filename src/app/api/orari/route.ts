@@ -5,10 +5,8 @@ import { getDb } from "@/lib/db";
 // GET /api/orari  →  pubblico, restituisce gli orari (dal DB se presenti, altrimenti i dati di default)
 export async function GET() {
   try {
-    const db = getDb();
-    const [rows] = await db.query(
-      `SELECT data FROM orari ORDER BY id DESC LIMIT 1`
-    ) as [Array<{ data: unknown }>, unknown];
+    const sql = getDb();
+    const rows = await sql`SELECT data FROM orari ORDER BY id DESC LIMIT 1`;
 
     if (rows.length > 0) {
       return NextResponse.json({ data: rows[0].data });
@@ -30,14 +28,12 @@ export async function POST(request: NextRequest) {
 
   try {
     const body = await request.json();
-    const db = getDb();
+    const sql = getDb();
+    const jsonData = JSON.stringify(body.data);
 
     // Upsert: rimuovi tutte le versioni precedenti e inserisci la nuova
-    await db.query(`DELETE FROM orari`);
-    await db.query(
-      `INSERT INTO orari (data, updated_by) VALUES (?, ?)`,
-      [JSON.stringify(body.data), "admin"]
-    );
+    await sql`DELETE FROM orari`;
+    await sql`INSERT INTO orari (data, updated_by) VALUES (${jsonData}::jsonb, ${'admin'})`;
 
     return NextResponse.json({ success: true });
   } catch (err) {
