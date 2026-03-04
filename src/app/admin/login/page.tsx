@@ -30,9 +30,10 @@ function LoginForm() {
 
     setLoading(false);
 
-    if (result?.error) {
+    if (!result || result.error) {
       setError("Username o password non corretti.");
     } else {
+      router.refresh();
       router.push(callbackUrl);
     }
   };
