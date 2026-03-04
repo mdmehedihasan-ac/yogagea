@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, Suspense } from "react";
+import { signIn } from "next-auth/react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { Lock, User, Eye, EyeOff, Loader2 } from "lucide-react";
-import { loginAction } from "./actions";
 
 function LoginForm() {
   const searchParams = useSearchParams();
@@ -22,18 +22,22 @@ function LoginForm() {
     setLoading(true);
 
     try {
-      const result = await loginAction(username, password);
+      const result = await signIn("credentials", {
+        username,
+        password,
+        redirect: false,
+      });
 
-      if (result.success) {
+      if (!result || result.error) {
+        setError("Username o password non corretti.");
+        setLoading(false);
+      } else {
         window.location.href = callbackUrl;
-        return;
       }
-
-      setError(result.error || "Errore durante il login.");
     } catch {
       setError("Errore di connessione. Riprova.");
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   return (
