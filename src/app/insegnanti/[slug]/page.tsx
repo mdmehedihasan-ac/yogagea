@@ -47,7 +47,7 @@ export default async function InsegnanteDetailPage({ params }: { params: Promise
                   src={ins.fotoBio}
                   alt={ins.nome}
                   fill
-                  className="object-cover object-top"
+                  className={`object-cover object-top ${ins.fotoClassName ?? ""}`}
                   priority
                 />
               </div>

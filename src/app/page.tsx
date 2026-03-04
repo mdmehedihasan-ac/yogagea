@@ -45,16 +45,19 @@ const howItWorks = [
     step: "01",
     title: "Scegli la disciplina",
     text: "Esplora le lezioni e trova il percorso più adatto a te.",
+    href: "/lezioni",
   },
   {
     step: "02",
     title: "Consulta gli orari",
     text: "Verifica sedi e fasce orarie per organizzare la tua settimana.",
+    href: "/orari",
   },
   {
     step: "03",
     title: "Iscriviti online",
     text: "Compila il modulo in pochi minuti e inizia la pratica.",
+    href: "/iscrizione",
   },
 ];
 
@@ -162,11 +165,11 @@ export default function HomePage() {
                 <p className="text-xs uppercase tracking-[0.2em] text-cream-dark/80">Prossimi passi</p>
                 <div className="mt-5 space-y-4">
                   {howItWorks.map((item) => (
-                    <div key={item.step} className="rounded-2xl border border-white/20 bg-white/5 p-4">
+                    <Link key={item.step} href={item.href} className="block rounded-2xl border border-white/20 bg-white/5 p-4 transition-all hover:bg-white/15 hover:border-white/35">
                       <p className="text-xs font-semibold tracking-[0.2em] text-sage-light">{item.step}</p>
                       <h3 className="mt-1 font-heading text-2xl leading-tight">{item.title}</h3>
                       <p className="mt-1 text-sm text-cream-dark/80">{item.text}</p>
-                    </div>
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -322,13 +325,19 @@ export default function HomePage() {
                 <h3 className="font-heading text-3xl text-charcoal">Dove siamo</h3>
                 <div className="mt-6 space-y-4">
                   {sedi.map((sede) => (
-                    <div key={sede.nome} className="flex items-start gap-3 rounded-xl border border-terra/12 bg-white p-4">
+                    <a
+                      key={sede.nome}
+                      href={`https://www.google.com/maps/search/?api=1&query=${sede.mapQuery}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-start gap-3 rounded-xl border border-terra/12 bg-white p-4 transition-all hover:shadow-md hover:border-terra/30"
+                    >
                       <MapPin className="mt-0.5 shrink-0 text-terra" size={18} />
                       <div>
                         <p className="font-medium text-charcoal">{sede.nome}</p>
                         <p className="text-sm text-charcoal-light">{sede.indirizzo}</p>
                       </div>
-                    </div>
+                    </a>
                   ))}
                 </div>
               </div>

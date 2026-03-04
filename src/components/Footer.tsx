@@ -21,7 +21,7 @@ export default function Footer() {
           {/* Column 1: Brand */}
           <div>
             <h3 className="font-heading text-3xl font-semibold text-white mb-4">
-              YOGAGEA
+              YOGAGEA <span className="text-sm font-normal opacity-70">a.s.d.</span>
             </h3>
             <p className="text-sm text-cream-dark/70 leading-relaxed mb-6">
               Un corpo flessibile + una mente flessibile = benessere.
@@ -81,12 +81,19 @@ export default function Footer() {
             <h4 className="font-heading text-xl text-white mb-4">Le Nostre Sedi</h4>
             <ul className="space-y-4">
               {sedi.map((sede) => (
-                <li key={sede.nome} className="flex gap-2">
-                  <MapPin size={16} className="text-terra mt-0.5 shrink-0" />
-                  <div>
-                    <p className="text-sm font-medium text-white">{sede.nome}</p>
-                    <p className="text-xs text-cream-dark/70">{sede.indirizzo}</p>
-                  </div>
+                <li key={sede.nome}>
+                  <a
+                    href={`https://www.google.com/maps/search/?api=1&query=${sede.mapQuery}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex gap-2 transition-colors hover:opacity-80"
+                  >
+                    <MapPin size={16} className="text-terra mt-0.5 shrink-0" />
+                    <div>
+                      <p className="text-sm font-medium text-white">{sede.nome}</p>
+                      <p className="text-xs text-cream-dark/70">{sede.indirizzo}</p>
+                    </div>
+                  </a>
                 </li>
               ))}
             </ul>

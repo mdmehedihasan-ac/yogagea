@@ -27,11 +27,9 @@ type Sede = {
 const corsoSlugMap: Record<string, string> = {
   "PILATES pers": "pilates",
   PILATES: "pilates",
-  "YOGA & PILATES": "hatha-yoga",
   "HATHA YOGA": "hatha-yoga",
-  "HATHA YOGA CLASSICO": "hatha-yoga-flow",
   "HATHA FLOW": "hatha-yoga-flow",
-  "YOGA FLOW": "hatha-yoga-flow",
+  "HATHA YOGA FLOW": "hatha-yoga-flow",
   "ROCKET YOGA insp.": "rocket-yoga-inspired",
   "VINYASA KRAMA": "vinyasa-krama",
   "QI GONG": "qi-gong",
@@ -45,6 +43,7 @@ const corsoSlugMap: Record<string, string> = {
   YUTORI: "yutori",
   "KUNDALINI YOGA": "kundalini-yoga",
   "YOGA RESET": "yoga-reset",
+  "YOGA SCHIENA": "yoga-schiena",
 };
 
 const insegnanteSlugMap: Record<string, string> = {
@@ -119,7 +118,7 @@ const sedi: Sede[] = [
         giorno: "Lunedì",
         classi: [
           { orario: "13.30 - 14.15", nome: "PILATES pers", insegnante: "gruppo Paola" },
-          { orario: "17.00 - 18.00", nome: "YOGA & PILATES", insegnante: "Lore + Robi" },
+          { orario: "17.00 - 18.00", nome: "HATHA YOGA", insegnante: "Lore + Robi" },
           { orario: "18.30 - 19.30", nome: "ROCKET YOGA insp.", insegnante: "Azzurra" },
           { orario: "19.40 - 20.40", nome: "VINYASA KRAMA", insegnante: "Franci" },
         ],
@@ -143,7 +142,7 @@ const sedi: Sede[] = [
           { orario: "17.00 - 18.00", nome: "YOGA SCHIENA", insegnante: "Robi" },
           { orario: "18.15 - 19.15", nome: "HATHA YOGA", insegnante: "Franci" },
           { orario: "19.30 - 20.30", nome: "VIVEKA YOGA", insegnante: "Stefano" },
-          { orario: "19.30 - 20.30", nome: "YOGA FLOW", insegnante: "Barbara" },
+          { orario: "19.30 - 20.30", nome: "HATHA YOGA FLOW", insegnante: "Barbara" },
         ],
       },
       {
@@ -172,7 +171,7 @@ const sedi: Sede[] = [
             insegnante: "Grazia",
             nota: "Secondo sabato del mese",
           },
-          { orario: "10.30 - 11.30", nome: "HATHA YOGA CLASSICO", insegnante: "Stefania" },
+          { orario: "10.30 - 11.30", nome: "HATHA YOGA", insegnante: "Stefania" },
         ],
       },
     ],
@@ -201,7 +200,7 @@ const sedi: Sede[] = [
         giorno: "Lunedì",
         classi: [
           { orario: "18.15 - 19.15", nome: "VINYASA KRAMA", insegnante: "Franci" },
-          { orario: "19.30 - 20.30", nome: "BURNING YOGA", insegnante: "Marta" },
+          { orario: "19.30 - 20.30", nome: "YOGA RESET", insegnante: "Marta" },
         ],
       },
       {

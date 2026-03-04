@@ -7,6 +7,7 @@ export interface Insegnante {
   qualifica?: string;
   instagram?: string[];
   sito?: string;
+  fotoClassName?: string;
 }
 
 export const insegnanti: Insegnante[] = [
@@ -92,6 +93,7 @@ export const insegnanti: Insegnante[] = [
     nome: "Azzurra Corradini",
     foto: "/avatar-placeholder.svg",
     fotoBio: "/azzurra-corradini.jpeg",
+    fotoClassName: "-scale-x-100",
     bio: `Ho iniziato a praticare yoga nel 2019, concentrandomi principalmente sullo stile dinamico e Ashtanga. Questa pratica mi ha aiutato a migliorare la mia forza, flessibilità e concentrazione. Nel 2024, ho deciso di approfondire la mia passione per lo yoga e ho ottenuto la certificazione di Yoga Teacher. Attraverso lo yoga, ho imparato l'importanza di rispettare il mio corpo, i suoi tempi e limiti e sono entusiasta di condividere questa conoscenza con gli altri.`,
   },
   {

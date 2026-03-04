@@ -84,12 +84,14 @@ export default async function LezioneDetailPage({ params }: { params: Promise<{ 
 
           <ScrollReveal delay={0.2} className="mt-12">
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/iscrizione"
-                className="bg-terra text-white px-8 py-4 rounded-full font-medium hover:bg-terra-dark transition-all text-center"
-              >
-                Iscriviti a questo corso
-              </Link>
+              {lezione.suPrenotazione && lezione.telefonoPrenotazione && (
+                <a
+                  href={`tel:${lezione.telefonoPrenotazione.replace(/\s/g, "")}`}
+                  className="bg-terra text-white px-8 py-4 rounded-full font-medium hover:bg-terra-dark transition-all text-center inline-flex items-center justify-center gap-2"
+                >
+                  <Phone size={18} /> Prenota: {lezione.telefonoPrenotazione}
+                </a>
+              )}
               <Link
                 href="/orari"
                 className="border-2 border-terra/30 text-terra px-8 py-4 rounded-full font-medium hover:bg-terra/5 transition-all text-center"

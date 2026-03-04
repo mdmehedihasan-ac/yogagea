@@ -28,8 +28,17 @@ export default function Navbar() {
   const { data: session } = useSession();
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 50);
+          ticking = false;
+        });
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -54,7 +63,7 @@ export default function Navbar() {
               <Mail size={13} /> {contatti.email}
             </a>
           </div>
-          <p className="tracking-wide text-cream-dark/75">Pilates su prenotazione · <a href="tel:3333333333" className="hover:text-white transition-colors underline underline-offset-2">333 3333333</a></p>
+          <p className="tracking-wide text-cream-dark/75">Pilates su prenotazione · <a href="tel:+393294291041" className="hover:text-white transition-colors underline underline-offset-2">329 4291041</a></p>
         </div>
       </div>
 
@@ -89,7 +98,7 @@ export default function Navbar() {
                     isScrolled ? "text-terra group-hover:text-terra-dark" : "text-white group-hover:text-cream-dark"
                   )}
                 >
-                  YOGAGEA
+                  YOGAGEA<span className="text-[10px] md:text-xs font-normal ml-1 opacity-70">a.s.d.</span>
                 </span>
                 <span
                   className={cn(

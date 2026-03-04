@@ -7,8 +7,8 @@ export interface Sede {
 export const sedi: Sede[] = [
   {
     nome: "YOGAGEA a.s.d.",
-    indirizzo: "Molineria San Giovanni, 13 – Piacenza",
-    mapQuery: "Molineria+San+Giovanni+13+Piacenza",
+    indirizzo: "Via Molineria S. Giovanni, 13 – 29121 Piacenza",
+    mapQuery: "Via+Molineria+S.+Giovanni+13+29121+Piacenza+PC",
   },
   {
     nome: "YOGAGEA CHIOSTRI DUOMO",

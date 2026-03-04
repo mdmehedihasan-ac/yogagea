@@ -27,13 +27,13 @@ export const lezioni: Lezione[] = [
       "Le lezioni di ginnastica si avvalgono della tecnica di Pilates sul mat. Paola Busconi è fisioterapista e porta il suo sapere e la sua esperienza nella pratica sul tappetino. Le sequenze studiate sono all'insegna dell'allenamento di varie fasce muscolari, addome e pavimento pelvico, in particolare ma anche braccia gambe e spalle. Classi a numero limitato di praticanti. Prenotarsi è molto semplice: contattaci e ti spieghiamo come fare.",
     categoria: "pilates",
     suPrenotazione: true,
-    telefonoPrenotazione: "333 3333333",
+    telefonoPrenotazione: "+39 329 4291041",
   },
   // ── 3 ──────────────────────────────────────────────────────────
   {
     slug: "vinyasa-krama",
     nome: "Vinyasa Krama",
-    immagine: "https://www.yogagea.com/wp-content/uploads/2023/03/vinyasa.jpg",
+    immagine: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=980&q=80",
     descrizione:
       "Vinyasa Krama, da kram che significa passo, prevede il sequenziamento progressivo degli Asana (posture), dal più semplice al più complesso. Pratica dinamica e intensa, il cui ritmo è dettato dal respiro. Affondando la mente nel corpo attraverso l'allineamento al respiro interiore, accediamo alla meditazione in cui le polarità si dissolvono. Il corpo è respiro; il respiro è corpo.",
     categoria: "yoga",
@@ -96,7 +96,7 @@ export const lezioni: Lezione[] = [
   {
     slug: "yutori",
     nome: "Yutori",
-    immagine: "https://www.yogagea.com/wp-content/uploads/2025/09/yutori-980x549.jpg", // TODO: foto da aggiornare
+    immagine: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=980&q=80", // TODO: foto da aggiornare
     descrizione:
       "Yutori significa coltivare il silenzio. Ogni sabato mattina gli incontri di Mindfulness sono seguiti da Hatha Yoga. Il secondo sabato del mese proponiamo Kundalini Yoga. Mindfulness e Kundalini sono gratuiti per i soci.",
     categoria: "meditazione",
@@ -149,7 +149,7 @@ export const lezioni: Lezione[] = [
   {
     slug: "yoga-reset",
     nome: "Yoga Reset",
-    immagine: "https://www.yogagea.com/wp-content/uploads/2023/08/exotic-yoga_2.jpg", // TODO: foto dedicata da aggiungere
+    immagine: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=980&q=80", // TODO: foto dedicata da aggiungere
     descrizione:
       "Volete aiutarvi a migliorare la performance sportiva e a prevenire gli infortuni? Una pratica yoga con focus su respiro, mobilità, allungo e rinforzo, dedicata a runners, ciclisti, climbers, crossfitters, calciatori, pallavolisti, rugbisti… e sportivi di ogni tipo! Pratica di stretching.",
     categoria: "yoga",

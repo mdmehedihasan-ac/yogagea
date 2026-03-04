@@ -16,7 +16,7 @@ export default function InsegnantiPage() {
     <>
       <PageHero
         title="I Nostri Insegnanti"
-        subtitle={`${insegnanti.length} professionisti qualificati al tuo servizio`}
+        subtitle="14 professionisti qualificati al tuo servizio"
         image="/insegnanti-hero.jpg"
         imageClassName="object-center md:object-[center_35%]"
       />
@@ -34,7 +34,7 @@ export default function InsegnantiPage() {
                         src={ins.fotoBio}
                         alt={ins.nome}
                         fill
-                        className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                        className={`object-cover object-top transition-transform duration-700 group-hover:scale-105 ${ins.fotoClassName ?? ""}`}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-charcoal/35 via-transparent to-transparent" />
                     </div>
