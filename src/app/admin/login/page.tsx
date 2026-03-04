@@ -2,12 +2,11 @@
 
 import { useState, Suspense } from "react";
 import { signIn } from "next-auth/react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { Lock, User, Eye, EyeOff, Loader2 } from "lucide-react";
 
 function LoginForm() {
-  const router = useRouter();
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get("callbackUrl") || "/admin";
 
@@ -33,8 +32,7 @@ function LoginForm() {
     if (!result || result.error) {
       setError("Username o password non corretti.");
     } else {
-      router.refresh();
-      router.push(callbackUrl);
+      window.location.href = callbackUrl;
     }
   };
 
