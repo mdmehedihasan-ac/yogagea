@@ -88,7 +88,7 @@ export default function HomePage() {
   return (
     <>
       <section ref={heroRef} className="relative min-h-screen overflow-hidden">
-        <motion.div style={{ y: heroY }} className="absolute inset-0">
+        <motion.div style={{ y: heroY }} className="absolute inset-0 pointer-events-none">
           <Image
             src="https://images.unsplash.com/photo-1545389336-cf090694435e?w=1920&q=80"
             alt="Yoga pratica"
@@ -111,7 +111,7 @@ export default function HomePage() {
                 transition={{ duration: 0.7 }}
                 className="pill-label !bg-white/10 !text-cream-dark"
               >
-                Yogagea a.s.d. • Piacenza
+                Yogagea <span className="text-[10px] align-middle opacity-80">a.s.d.</span> • Piacenza
               </motion.span>
 
               <motion.h1
@@ -138,7 +138,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.45 }}
-                className="mt-9 flex flex-col gap-4 sm:flex-row"
+                className="relative z-20 mt-9 flex flex-col gap-4 sm:flex-row"
               >
                 <Link
                   href="/iscrizione"

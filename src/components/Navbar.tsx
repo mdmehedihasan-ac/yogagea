@@ -51,6 +51,10 @@ export default function Navbar() {
     return () => { document.body.style.overflow = ""; };
   }, [isMobileOpen]);
 
+  useEffect(() => {
+    setIsMobileOpen(false);
+  }, [pathname]);
+
   return (
     <>
       <div className="fixed inset-x-0 top-0 z-50 hidden border-b border-white/10 bg-charcoal text-cream-dark lg:block">
@@ -185,7 +189,7 @@ export default function Navbar() {
 
             {/* Mobile Hamburger */}
             <button
-              onClick={() => setIsMobileOpen(!isMobileOpen)}
+              onClick={() => setIsMobileOpen((open) => !open)}
               className={cn("lg:hidden p-2 transition-colors z-50", isScrolled ? "text-charcoal hover:text-terra" : "text-white hover:text-white/70")}
               aria-label="Toggle menu"
             >

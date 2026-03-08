@@ -53,7 +53,6 @@ const CORSI_OPZIONI = [
   "ASHTANGA",
   "HATHA FLOW",
   "HATHA YOGA",
-  "HATHA YOGA CLASSICO",
   "KATONAH YOGA",
   "KUNDALINI YOGA",
   "YOGA RESET",
@@ -66,7 +65,8 @@ const CORSI_OPZIONI = [
   "VINYASA KRAMA",
   "VIVEKA YOGA",
   "YOGA DINAMICO",
-  "YOGA FLOW",
+  "HATHA YOGA FLOW",
+  "YOGA & PILATES",
   "YOGA RESET",
   "YOGA SCHIENA",
   "YIN YOGA",
@@ -107,7 +107,7 @@ const DEFAULT_SEDI: Sede[] = [
     giorni: [
       { giorno: "Lunedì", classi: [
         { orario: "13.30 - 14.15", nome: "PILATES pers", insegnante: "gruppo Paola" },
-        { orario: "17.00 - 18.00", nome: "YOGA & PILATES", insegnante: "Lore + Robi" },
+        { orario: "17.00 - 18.00", nome: "HATHA YOGA", insegnante: "Lore + Robi" },
         { orario: "18.30 - 19.30", nome: "ROCKET YOGA insp.", insegnante: "Azzurra" },
         { orario: "19.40 - 20.40", nome: "VINYASA KRAMA", insegnante: "Franci" },
       ]},
@@ -125,7 +125,7 @@ const DEFAULT_SEDI: Sede[] = [
         { orario: "17.00 - 18.00", nome: "YOGA SCHIENA", insegnante: "Robi" },
         { orario: "18.15 - 19.15", nome: "HATHA YOGA", insegnante: "Franci" },
         { orario: "19.30 - 20.30", nome: "VIVEKA YOGA", insegnante: "Stefano" },
-        { orario: "19.30 - 20.30", nome: "YOGA FLOW", insegnante: "Barbara" },
+        { orario: "19.30 - 20.30", nome: "HATHA YOGA FLOW", insegnante: "Barbara" },
       ]},
       { giorno: "Giovedì", classi: [
         { orario: "12.30 - 13.15", nome: "PILATES", insegnante: "Paola" },
@@ -140,7 +140,7 @@ const DEFAULT_SEDI: Sede[] = [
       { giorno: "Sabato", classi: [
         { orario: "09.30 - 10.15", nome: "MINDFULNESS", insegnante: "Roberto" },
         { orario: "10.30 - 12.00", nome: "KUNDALINI YOGA", insegnante: "Grazia", nota: "Secondo sabato del mese" },
-        { orario: "10.30 - 11.30", nome: "HATHA YOGA CLASSICO", insegnante: "Stefania" },
+        { orario: "10.30 - 11.30", nome: "HATHA YOGA", insegnante: "Stefania" },
       ]},
     ],
   },
@@ -160,7 +160,7 @@ const DEFAULT_SEDI: Sede[] = [
     giorni: [
       { giorno: "Lunedì", classi: [
         { orario: "18.15 - 19.15", nome: "VINYASA KRAMA", insegnante: "Franci" },
-        { orario: "19.30 - 20.30", nome: "BURNING YOGA", insegnante: "Marta" },
+        { orario: "19.30 - 20.30", nome: "YOGA RESET", insegnante: "Marta" },
       ]},
       { giorno: "Giovedì", classi: [{ orario: "18.30 - 19.30", nome: "VINYASA KRAMA", insegnante: "Franci" }] },
     ],

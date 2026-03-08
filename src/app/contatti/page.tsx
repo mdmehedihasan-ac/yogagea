@@ -28,13 +28,18 @@ export default function ContattiPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {sedi.map((sede, i) => (
               <ScrollReveal key={sede.nome} delay={i * 0.1}>
-                <div className="bg-white rounded-2xl p-8 shadow-sm text-center hover:shadow-lg transition-shadow h-full">
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${sede.mapQuery}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-white rounded-2xl p-8 shadow-sm text-center hover:shadow-lg transition-shadow h-full"
+                >
                   <MapPin className="text-terra mx-auto mb-4" size={32} />
                   <h3 className="font-heading text-xl font-semibold text-charcoal mb-2">
                     {sede.nome}
                   </h3>
                   <p className="text-charcoal-light text-sm">{sede.indirizzo}</p>
-                </div>
+                </a>
               </ScrollReveal>
             ))}
           </div>

@@ -27,9 +27,13 @@ type Sede = {
 const corsoSlugMap: Record<string, string> = {
   "PILATES pers": "pilates",
   PILATES: "pilates",
+  "YOGA & PILATES": "hatha-yoga",
+  "YOGA E PILATES": "hatha-yoga",
   "HATHA YOGA": "hatha-yoga",
   "HATHA FLOW": "hatha-yoga-flow",
   "HATHA YOGA FLOW": "hatha-yoga-flow",
+  "YOGA FLOW": "hatha-yoga-flow",
+  "HATHA YOGA CLASSICO": "hatha-yoga",
   "ROCKET YOGA insp.": "rocket-yoga-inspired",
   "VINYASA KRAMA": "vinyasa-krama",
   "QI GONG": "qi-gong",
@@ -43,8 +47,31 @@ const corsoSlugMap: Record<string, string> = {
   YUTORI: "yutori",
   "KUNDALINI YOGA": "kundalini-yoga",
   "YOGA RESET": "yoga-reset",
+  "BURNING YOGA": "yoga-reset",
   "YOGA SCHIENA": "yoga-schiena",
 };
+
+function normalizeCorsoName(nomeCorso: string) {
+  const normalized = nomeCorso.trim().replace(/\s+/g, " ").toUpperCase();
+
+  if (normalized === "YOGA & PILATES" || normalized === "YOGA E PILATES") {
+    return "HATHA YOGA";
+  }
+
+  if (normalized === "BURNING YOGA") {
+    return "YOGA RESET";
+  }
+
+  if (normalized === "YOGA FLOW") {
+    return "HATHA YOGA FLOW";
+  }
+
+  if (normalized === "HATHA YOGA CLASSICO") {
+    return "HATHA YOGA";
+  }
+
+  return normalized;
+}
 
 const insegnanteSlugMap: Record<string, string> = {
   Robi: "robi-morisi",
@@ -64,15 +91,17 @@ const insegnanteSlugMap: Record<string, string> = {
 };
 
 function renderCorsoLink(nomeCorso: string) {
-  const slug = corsoSlugMap[nomeCorso];
+  const normalizedName = normalizeCorsoName(nomeCorso);
+  const slug = corsoSlugMap[normalizedName] ?? corsoSlugMap[nomeCorso];
+
   if (!slug) {
-    return <p className="mt-2 text-base font-semibold text-charcoal">{nomeCorso}</p>;
+    return <p className="mt-2 text-base font-semibold text-charcoal">{normalizedName}</p>;
   }
 
   return (
     <p className="mt-2 text-base font-semibold text-charcoal">
       <Link href={`/lezioni/${slug}`} className="text-terra hover:underline">
-        {nomeCorso}
+        {normalizedName}
       </Link>
     </p>
   );

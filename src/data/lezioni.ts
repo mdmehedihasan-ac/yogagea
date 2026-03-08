@@ -33,7 +33,7 @@ export const lezioni: Lezione[] = [
   {
     slug: "vinyasa-krama",
     nome: "Vinyasa Krama",
-    immagine: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=980&q=80",
+    immagine: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=980&q=80",
     descrizione:
       "Vinyasa Krama, da kram che significa passo, prevede il sequenziamento progressivo degli Asana (posture), dal più semplice al più complesso. Pratica dinamica e intensa, il cui ritmo è dettato dal respiro. Affondando la mente nel corpo attraverso l'allineamento al respiro interiore, accediamo alla meditazione in cui le polarità si dissolvono. Il corpo è respiro; il respiro è corpo.",
     categoria: "yoga",
@@ -96,7 +96,7 @@ export const lezioni: Lezione[] = [
   {
     slug: "yutori",
     nome: "Yutori",
-    immagine: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=980&q=80", // TODO: foto da aggiornare
+    immagine: "https://images.unsplash.com/photo-1474418397713-7ede21d49118?w=980&q=80", // TODO: foto dedicata in arrivo
     descrizione:
       "Yutori significa coltivare il silenzio. Ogni sabato mattina gli incontri di Mindfulness sono seguiti da Hatha Yoga. Il secondo sabato del mese proponiamo Kundalini Yoga. Mindfulness e Kundalini sono gratuiti per i soci.",
     categoria: "meditazione",
@@ -149,7 +149,7 @@ export const lezioni: Lezione[] = [
   {
     slug: "yoga-reset",
     nome: "Yoga Reset",
-    immagine: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=980&q=80", // TODO: foto dedicata da aggiungere
+    immagine: "https://images.unsplash.com/photo-1599447421388-58f63d8a6e18?w=980&q=80", // TODO: foto dedicata da aggiungere
     descrizione:
       "Volete aiutarvi a migliorare la performance sportiva e a prevenire gli infortuni? Una pratica yoga con focus su respiro, mobilità, allungo e rinforzo, dedicata a runners, ciclisti, climbers, crossfitters, calciatori, pallavolisti, rugbisti… e sportivi di ogni tipo! Pratica di stretching.",
     categoria: "yoga",
